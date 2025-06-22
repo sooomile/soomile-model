@@ -1,0 +1,17 @@
+{
+  "random_forest": {
+    "model_type": "RandomForestRegressor",
+    "performance": {
+      "MSE": 6.426262919393842,
+      "RMSE": 2.53500747915935,
+      "MAE": 0.3419789941639061,
+      "R²": 0.9932870562612417
+    },
+    "best_model": true,
+    "features_count": 5,
+    "training_samples": 8779604,
+    "test_samples": 2194901,
+    "created_at": "2025-06-22T06:06:24.170111",
+    "description": "Random Forest 모델 - PM10 포함, 최고 성능 (R²: 0.9978)"
+  }
+}

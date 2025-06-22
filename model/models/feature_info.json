@@ -1,0 +1,14 @@
+{
+  "random_forest": {
+    "features": [
+      "pm10",
+      "평균기온(°C)",
+      "일강수량(mm)",
+      "평균 풍속(m/s)",
+      "month"
+    ],
+    "target": "pm25",
+    "use_pm10": true,
+    "description": "PM10 포함, 최고 성능 모델"
+  }
+}
