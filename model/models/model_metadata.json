@@ -2,16 +2,16 @@
   "random_forest": {
     "model_type": "RandomForestRegressor",
     "performance": {
-      "MSE": 6.426262919393842,
-      "RMSE": 2.53500747915935,
-      "MAE": 0.3419789941639061,
-      "R²": 0.9932870562612417
+      "MSE": 0.7597823538455544,
+      "RMSE": 0.871654951139242,
+      "MAE": 0.08480982789186085,
+      "R²": 0.9978400298357978
     },
     "best_model": true,
     "features_count": 5,
     "training_samples": 8779604,
     "test_samples": 2194901,
-    "created_at": "2025-06-22T06:06:24.170111",
-    "description": "Random Forest 모델 - PM10 포함, 최고 성능 (R²: 0.9978)"
+    "created_at": "2025-06-22T18:05:19.936386",
+    "description": "Random Forest 모델 - PM25 포함, 최고 성능 (R²: 0.9978)"
   }
 }
