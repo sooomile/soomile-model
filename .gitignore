@@ -208,3 +208,5 @@ Thumbs.db
 
 # 파일 용량으로 인해 모델 파일 무시
 /model/models/*.pkl
+
+/model/api/deployment_guide.md

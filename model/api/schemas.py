@@ -11,4 +11,4 @@ class PredictionInput(BaseModel):
 
 class PredictionOutput(BaseModel):
     #station_name: str = Field(..., description="측정소명", examples=["강남구"])
-    predicted_pm10: float = Field(..., description="예측된 미세먼지 농도", examples=[67.22]) 
+    pm10: float = Field(..., description="예측된 미세먼지 농도", examples=[67.22]) 
