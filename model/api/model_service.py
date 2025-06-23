@@ -1,10 +1,10 @@
 import joblib
 import pandas as pd
-from .schemas import PredictionInput, PredictionOutput # schemas.py 파일에서 입출력 형식을 가져옵니다.
+from schemas import PredictionInput, PredictionOutput # schemas.py 파일에서 입출력 형식을 가져옵니다.
 
 # --- 중요 ---
 # 노트북에서 PM2.5를 예측하도록 새로 학습시킨 모델의 경로입니다.
-MODEL_PATH = "./models/pm10_predict_model.pkl" 
+MODEL_PATH = "../models/pm10_predict_model.pkl" 
 
 class ModelService:
     _instance = None

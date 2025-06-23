@@ -2,8 +2,8 @@ from fastapi import FastAPI, HTTPException
 from typing import List
 
 # 우리가 만든 스키마(데이터 형식)와 모델 서비스를 가져옵니다.
-from .schemas import PredictionInput, PredictionOutput
-from .model_service import model_service
+from schemas import PredictionInput, PredictionOutput
+from model_service import model_service
 
 # FastAPI 앱 생성
 app = FastAPI(
