@@ -79,7 +79,7 @@ class ModelService:
         # 5. 최종 결과를 API 출력 형식에 맞게 생성하여 반환합니다.
         result = PredictionOutput(
             #station_name=input_data.station_name,
-            predicted_pm10=round(predicted_value, 2) # 소수점 2자리까지만 반올림
+            pm10=round(predicted_value, 2) # 소수점 2자리까지만 반올림
         )
         
         return result
