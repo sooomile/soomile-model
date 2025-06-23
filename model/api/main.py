@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from typing import List
 
 # 우리가 만든 스키마(데이터 형식)와 모델 서비스를 가져옵니다.
-from schemas import PredictionInput, PredictionOutput
+from schemas import PredictionInput, PredictionOutput, BundleInput, BundleOutput
 from model_service import model_service
 
 # FastAPI 앱 생성
@@ -36,10 +36,24 @@ def predict_pm25(data: PredictionInput):
         # 그 외 예측 중 에러가 발생하면 500 에러를 반환합니다.
         raise HTTPException(status_code=500, detail=f"예측 중 오류가 발생했습니다: {e}")
 
+@app.post("/predict/bundle", response_model=BundleOutput)
+def predict_bundle(bundle_input: BundleInput):
+    """
+    여러 날짜별로 구, 날짜, 기상정보를 받아 date/pm10만 리스트로 반환합니다.
+    """
+    try:
+        result = model_service.predict_bundle(bundle_input)
+        return result
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=f"서비스를 사용할 수 없습니다: {e}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"예측 중 오류가 발생했습니다: {e}") 
+
 # 서버 시작 시 모델이 로드되었는지 확인하는 로직 (선택사항이지만 추천)
 @app.on_event("startup")
 async def startup_event():
     if model_service.model is None:
         print("🚨 [경고] 서버가 시작되었지만, 모델이 로드되지 않았습니다! API가 정상 동작하지 않을 수 있습니다.")
     else:
-        print("🚀 FastAPI 애플리케이션 시작 준비 완료. 모델이 성공적으로 로드되었습니다.") 
+        print("🚀 FastAPI 애플리케이션 시작 준비 완료. 모델이 성공적으로 로드되었습니다.")
+
