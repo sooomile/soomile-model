@@ -32,7 +32,7 @@ KOR_TO_ENG_GU = {
     "양천구": "Yangcheon-gu",
     "영등포구": "Yeongdeungpo-gu",
     "용산구": "Yongsan-gu",
-    "은평구": "Eunpyeong-gu",
+    "은평구": "Bulgwang-dong, Eunpyeong-gu",
     "종로구": "Jongno-gu",
     "중구": "Jung-gu",
     "중랑구": "Jungnang-gu"
